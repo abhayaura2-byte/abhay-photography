@@ -1,0 +1,1152 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head><link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ABHAY Photography | Creative Photography Portfolio</title>
+
+<meta name="description" content="Explore ABHAY Photography's creative portfolio featuring portraits, nature and travel photography.">
+
+<meta name="author" content="ABHAY Photography">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#101010">
+
+<meta property="og:title" content="ABHAY Photography">
+<meta property="og:description" content="Explore beautiful photography and creative moments.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=1200">
+
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #0b0b0b;
+  color: white;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 8%;
+  background: #111;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 23px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.logo span {
+  color: #d4a85a;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 18px;
+  font-size: 14px;
+}
+
+.hero {
+  min-height: 85vh;
+  background:
+    linear-gradient(#0008,#0009),
+    url("https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=1600")
+    center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.hero h1 {
+  font-size: clamp(35px, 7vw, 65px);
+  letter-spacing: 4px;
+}
+
+.hero p {
+  margin: 20px 0;
+  color: #ddd;
+  font-size: 18px;
+}
+
+.btn {
+  display: inline-block;
+  background: #d4a85a;
+  color: black;
+  padding: 14px 28px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+section {
+  padding: 80px 8%;
+  text-align: center;
+}
+
+.heading {
+  font-size: 34px;
+  margin-bottom: 15px;
+}
+
+.subheading {
+  color: #aaa;
+  margin-bottom: 40px;
+}
+
+.upload-box {
+  margin-bottom: 35px;
+}
+
+.upload-btn {
+  display: inline-block;
+  background: #d4a85a;
+  color: black;
+  padding: 15px 25px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.gallery img:hover {
+  transform: scale(1.04);
+}
+
+.about {
+  background: #151515;
+}
+
+.about p {
+  color: #bbb;
+  max-width: 650px;
+  margin: auto;
+  line-height: 1.8;
+}
+
+.services {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.service {
+  background: #181818;
+  padding: 35px 20px;
+  border-radius: 10px;
+}
+
+.service h3 {
+  color: #d4a85a;
+  margin-bottom: 15px;
+}
+
+.service p {
+  color: #aaa;
+  line-height: 1.6;
+}
+
+.contact {
+  background: #151515;
+}
+
+.contact p {
+  color: #bbb;
+  margin: 15px 0 25px;
+}
+
+footer {
+  text-align: center;
+  padding: 25px;
+  background: #080808;
+  color: #888;
+}
+
+/* FULL SCREEN PHOTO VIEWER */
+
+.viewer {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.96);
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.viewer img {
+  max-width: 90%;
+  max-height: 75vh;
+  object-fit: contain;
+}
+
+.viewer button {
+  position: absolute;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 35px;
+  cursor: pointer;
+  padding: 10px;
+}
+
+#closePhoto {
+  top: 10px;
+  right: 20px;
+}
+
+#prevPhoto {
+  left: 10px;
+  top: 50%;
+}
+
+#nextPhoto {
+  right: 10px;
+  top: 50%;
+}
+
+@media(max-width:700px) {
+  nav {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  nav a {
+    margin: 0 7px;
+    font-size: 12px;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(2,1fr);
+  }
+
+  .gallery img {
+    height: 180px;
+  }
+
+  .services {
+    grid-template-columns: 1fr;
+  }
+
+  section {
+    padding: 60px 5%;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="logo">ABHAY <span>PHOTO</span></div>
+  <div>
+    <a href="#home">Home</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<div class="hero" id="home">
+  <div>
+    <h1>CAPTURE THE MOMENT</h1>
+    <p>Photography is the story I fail to put into words.</p>
+    <a href="#gallery" class="btn">EXPLORE PHOTOS</a>
+  </div>
+</div>
+
+<section id="gallery">
+  <h2 class="heading">OUR GALLERY</h2>
+  <p class="subheading">Every picture tells a beautiful story.</p>
+
+  <div class="upload-box">
+    <label for="photoUpload" class="upload-btn">
+      + UPLOAD YOUR PHOTOS
+    </label>
+    <input type="file" id="photoUpload"
+      accept="image/*" multiple hidden>
+  </div>
+
+  <div class="gallery">
+    <img src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=600" alt="Nature">
+    <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=600" alt="Landscape">
+    <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=600" alt="Portrait">
+    <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=600" alt="Camera">
+    <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=600" alt="Mountain">
+    <img src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?w=600" alt="Nature view">
+  </div>
+</section>
+
+<section class="about" id="about">
+  <h2 class="heading">ABOUT US</h2>
+  <p>
+    Welcome to Abhay Photography.
+    We believe every moment is special.
+    Our goal is to capture beautiful memories
+    and turn them into timeless photographs.
+  </p>
+</section>
+
+<section>
+  <h2 class="heading">OUR SERVICES</h2>
+  <p class="subheading">What we can capture for you.</p>
+
+  <div class="services">
+    <div class="service">
+      <h3>Portrait Photography</h3>
+      <p>Beautiful portraits that capture personality and emotion.</p>
+    </div>
+
+    <div class="service">
+      <h3>Nature Photography</h3>
+      <p>Explore the beauty of nature through our camera.</p>
+    </div>
+
+    <div class="service">
+      <h3>Wedding Photography</h3>
+      <p>Preserving your special moments forever.</p>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <h2 class="heading">CONTACT US</h2>
+  <p>Want to capture your special moments?</p>
+  <a href="mailto:abhay@example.com" class="btn">
+    SEND AN EMAIL
+  </a>
+</section>
+
+<footer>
+  <p>© 2026 Abhay Photography | All Rights Reserved</p>
+</footer>
+
+<!-- PHOTO VIEWER -->
+
+<div class="viewer" id="viewer">
+  <button id="closePhoto">&times;</button>
+  <button id="prevPhoto">❮</button>
+  <img id="bigPhoto" src="" alt="Selected photograph">
+  <p id="photoNumber"></p>
+  <button id="nextPhoto">❯</button>
+</div>
+
+<script>
+
+let photos = document.querySelectorAll(".gallery img");
+
+const viewer = document.getElementById("viewer");
+const bigPhoto = document.getElementById("bigPhoto");
+const photoNumber = document.getElementById("photoNumber");
+
+let currentPhoto = 0;
+
+function showPhoto(index) {
+  currentPhoto = (index + photos.length) % photos.length;
+  bigPhoto.src = photos[currentPhoto].src;
+  photoNumber.textContent =
+    (currentPhoto + 1) + " / " + photos.length;
+}
+
+function openPhoto(index) {
+  showPhoto(index);
+  viewer.style.display = "flex";
+}
+
+function closePhoto() {
+  viewer.style.display = "none";
+}
+
+function refreshGallery() {
+  photos = document.querySelectorAll(".gallery img");
+
+  photos.forEach((photo, index) => {
+    photo.onclick = () => openPhoto(index);
+  });
+}
+
+refreshGallery();
+
+document.getElementById("nextPhoto").onclick = () => {
+  showPhoto(currentPhoto + 1);
+};
+
+document.getElementById("prevPhoto").onclick = () => {
+  showPhoto(currentPhoto - 1);
+};
+
+document.getElementById("closePhoto").onclick = closePhoto;
+
+viewer.addEventListener("click", event => {
+  if (event.target === viewer) closePhoto();
+});
+
+document.addEventListener("keydown", event => {
+  if (viewer.style.display === "flex") {
+    if (event.key === "Escape") closePhoto();
+    if (event.key === "ArrowRight") showPhoto(currentPhoto + 1);
+    if (event.key === "ArrowLeft") showPhoto(currentPhoto - 1);
+  }
+});
+
+// PHOTO UPLOAD
+
+const photoUpload = document.getElementById("photoUpload");
+
+photoUpload.addEventListener("change", event => {
+  const gallery = document.querySelector(".gallery");
+
+  Array.from(event.target.files).forEach(file => {
+
+    if (!file.type.startsWith("image/")) return;
+
+    const imageURL = URL.createObjectURL(file);
+    const img = document.createElement("img");
+
+    img.src = imageURL;
+    img.alt = file.name;
+
+    gallery.appendChild(img);
+  });
+
+  refreshGallery();
+  event.target.value = "";
+});
+
+</script>
+
+<style>
+
+/* CINEMATIC INTRO */
+
+body {
+  animation: pageEnter 1.2s ease;
+}
+
+@keyframes pageEnter {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* HERO TEXT ANIMATION */
+
+.hero h1 {
+  animation: titleReveal 1.5s ease both;
+}
+
+.hero p {
+  animation: titleReveal 2s ease both;
+}
+
+.hero .btn {
+  animation: buttonReveal 2.5s ease both;
+}
+
+@keyframes titleReveal {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+    letter-spacing: 12px;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    letter-spacing: 4px;
+  }
+}
+
+@keyframes buttonReveal {
+  from {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* NAVBAR */
+
+nav {
+  animation: navDown 1s ease;
+}
+
+@keyframes navDown {
+  from {
+    transform: translateY(-60px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* GALLERY HOVER */
+
+.gallery img {
+  transition: transform 0.5s ease,
+              filter 0.5s ease,
+              box-shadow 0.5s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.06);
+  filter: brightness(1.15);
+  box-shadow: 0 0 22px #d4a85a66;
+}
+
+/* BUTTON EFFECT */
+
+.btn,
+.upload-btn {
+  transition: all 0.35s ease;
+}
+
+.btn:hover,
+.upload-btn:hover {
+  background: white;
+  color: black;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px #d4a85a55;
+}
+
+/* SERVICE CARDS */
+
+.service {
+  transition: transform 0.4s ease,
+              background 0.4s ease,
+              box-shadow 0.4s ease;
+}
+
+.service:hover {
+  transform: translateY(-12px);
+  background: #222;
+  box-shadow: 0 10px 30px #d4a85a22;
+}
+
+/* GOLD HEADING */
+
+.heading {
+  transition: color 0.4s ease;
+}
+
+.heading:hover {
+  color: #d4a85a;
+}
+
+/* SCROLL REVEAL */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.9s ease;
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* GLOWING LOGO */
+
+.logo {
+  animation: logoGlow 3s infinite alternate;
+}
+
+@keyframes logoGlow {
+  from {
+    text-shadow: 0 0 2px #d4a85a;
+  }
+  to {
+    text-shadow: 0 0 18px #d4a85a;
+  }
+}
+
+/* REDUCE MOTION IF REQUESTED */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+</style>
+
+<script>
+
+// ADD SCROLL ANIMATION TO SECTIONS
+
+const animatedSections = document.querySelectorAll(
+  "section, .gallery img, .service"
+);
+
+animatedSections.forEach(item => {
+  item.classList.add("reveal");
+});
+
+// DETECT WHEN USER SCROLLS
+
+const observer = new IntersectionObserver(entries => {
+
+  entries.forEach(entry => {
+
+    if (entry.isIntersecting) {
+
+      entry.target.classList.add("show");
+
+    }
+
+  });
+
+}, {
+  threshold: 0.15
+});
+
+animatedSections.forEach(item => {
+  observer.observe(item);
+});
+
+</script>
+</body>
+</html>
+
+<style>
+/* DIGITAL CLOCK SECTION */
+
+#studio-live {
+  background: linear-gradient(135deg,#171717,#302719);
+  padding: 45px 15px;
+  margin: 30px 8%;
+  text-align: center;
+  border: 1px solid #d4a85a55;
+  border-radius: 15px;
+}
+
+#studio-live h2 {
+  color: #d4a85a;
+  margin-bottom: 15px;
+}
+
+#liveClock {
+  font-size: 38px;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+
+#liveDate {
+  color: #bbb;
+  margin-top: 12px;
+}
+
+/* STATISTICS */
+
+#studio-stats {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 15px;
+  padding: 35px 8%;
+  text-align: center;
+}
+
+.stat-card {
+  background: #191919;
+  padding: 30px 10px;
+  border-radius: 12px;
+  border-bottom: 3px solid #d4a85a;
+  transition: 0.4s;
+}
+
+.stat-card:hover {
+  transform: translateY(-10px);
+  background: #29231a;
+}
+
+.stat-card h2 {
+  color: #d4a85a;
+  font-size: 35px;
+  margin-bottom: 10px;
+}
+
+.stat-card p {
+  color: #aaa;
+}
+
+@media(max-width:600px) {
+  #studio-stats {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+
+<script>
+
+// CREATE CLOCK SECTION
+
+const clockSection = document.createElement("section");
+
+clockSection.id = "studio-live";
+
+clockSection.innerHTML = `
+  <h2>STUDIO LIVE TIME</h2>
+  <div id="liveClock">00:00:00</div>
+  <p id="liveDate"></p>
+`;
+
+const footer = document.querySelector("footer");
+
+if (footer) {
+  document.body.insertBefore(clockSection, footer);
+} else {
+  document.body.appendChild(clockSection);
+}
+
+// LIVE CLOCK
+
+function updateClock() {
+
+  const now = new Date();
+
+  document.getElementById("liveClock").textContent =
+    now.toLocaleTimeString("en-IN");
+
+  document.getElementById("liveDate").textContent =
+    now.toLocaleDateString("en-IN", {
+      weekday: "long",
+      day: "numeric",
+      month: "long",
+      year: "numeric"
+    });
+}
+
+updateClock();
+setInterval(updateClock, 1000);
+
+// CREATE STATISTICS
+
+const statsSection = document.createElement("section");
+
+statsSection.id = "studio-stats";
+
+statsSection.innerHTML = `
+  <div class="stat-card">
+    <h2 class="counter" data-target="250">0</h2>
+    <p>Photo Moments</p>
+  </div>
+
+  <div class="stat-card">
+    <h2 class="counter" data-target="120">0</h2>
+    <p>Creative Projects</p>
+  </div>
+
+  <div class="stat-card">
+    <h2 class="counter" data-target="98">0</h2>
+    <p>Happy Memories</p>
+  </div>
+`;
+
+if (footer) {
+  document.body.insertBefore(statsSection, footer);
+} else {
+  document.body.appendChild(statsSection);
+}
+
+// ANIMATED COUNTERS
+
+const counterObserver = new IntersectionObserver(entries => {
+
+  entries.forEach(entry => {
+
+    if (entry.isIntersecting) {
+
+      const counter = entry.target;
+      const target = Number(counter.dataset.target);
+
+      let current = 0;
+      const step = Math.max(1, Math.ceil(target / 60));
+
+      const animation = setInterval(() => {
+
+        current += step;
+
+        if (current >= target) {
+          current = target;
+          clearInterval(animation);
+        }
+
+        counter.textContent = current + "+";
+
+      }, 25);
+
+      counterObserver.unobserve(counter);
+    }
+
+  });
+
+}, { threshold: 0.5 });
+
+document.querySelectorAll(".counter").forEach(counter => {
+  counterObserver.observe(counter);
+});
+
+</script>
+
+<style>
+/* BEFORE AFTER SLIDER */
+
+#compareSection {
+  background: #111;
+  padding: 70px 6%;
+  text-align: center;
+}
+
+#compareSection h2 {
+  color: #d4a85a;
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+#compareSection p {
+  color: #aaa;
+  margin-bottom: 30px;
+}
+
+.compare-box {
+  position: relative;
+  width: 100%;
+  max-width: 750px;
+  height: 400px;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 12px;
+  border: 2px solid #d4a85a;
+}
+
+.compare-box img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+}
+
+.after-image {
+  filter: brightness(1.25) saturate(1.5) contrast(1.1);
+  clip-path: inset(0 0 0 50%);
+}
+
+.compare-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  height: 100%;
+  width: 3px;
+  background: white;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.compare-handle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background: #d4a85a;
+  color: black;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+}
+
+.compare-label {
+  position: absolute;
+  top: 15px;
+  background: #000a;
+  padding: 9px 15px;
+  border-radius: 5px;
+  font-size: 13px;
+}
+
+.before-label {
+  left: 15px;
+}
+
+.after-label {
+  right: 15px;
+}
+
+#compareRange {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: ew-resize;
+  margin: 0;
+  z-index: 5;
+}
+
+@media(max-width:600px) {
+  .compare-box {
+    height: 280px;
+  }
+}
+</style>
+
+<section id="compareSection">
+
+  <h2>BEFORE & AFTER</h2>
+
+  <p>Drag the slider to compare photographs.</p>
+
+  <div class="compare-box">
+
+    <img
+      src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=1000"
+      alt="Original photograph">
+
+    <img
+      class="after-image"
+      id="afterImage"
+      src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=1000"
+      alt="Edited photograph">
+
+    <span class="compare-label before-label">
+      BEFORE
+    </span>
+
+    <span class="compare-label after-label">
+      AFTER
+    </span>
+
+    <div class="compare-line" id="compareLine">
+      <div class="compare-handle">↔</div>
+    </div>
+
+    <input
+      type="range"
+      min="0"
+      max="100"
+      value="50"
+      id="compareRange"
+      aria-label="Compare before and after photo">
+
+  </div>
+
+</section>
+
+<script>
+
+const compareRange =
+  document.getElementById("compareRange");
+
+const afterImage =
+  document.getElementById("afterImage");
+
+const compareLine =
+  document.getElementById("compareLine");
+
+compareRange.addEventListener("input", function() {
+
+  const value = this.value;
+
+  afterImage.style.clipPath =
+    `inset(0 0 0 ${value}%)`;
+
+  compareLine.style.left = value + "%";
+
+});
+
+</script>
+</body>
+</html>
+
+<style>
+#pageProgress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  width: 0%;
+  background: #d4a85a;
+  z-index: 99999;
+}
+
+#backTopBtn {
+  position: fixed;
+  bottom: 25px;
+  right: 20px;
+  width: 48px;
+  height: 48px;
+  border: 2px solid #d4a85a;
+  border-radius: 50%;
+  background: #111;
+  color: #d4a85a;
+  font-size: 24px;
+  cursor: pointer;
+  display: none;
+  z-index: 9999;
+  transition: 0.3s;
+}
+
+#backTopBtn:hover {
+  background: #d4a85a;
+  color: #111;
+  transform: translateY(-5px);
+}
+</style>
+
+<div id="pageProgress"></div>
+
+<button id="backTopBtn" aria-label="Back to top">
+  ↑
+</button>
+
+<script>
+const progressBar =
+  document.getElementById("pageProgress");
+
+const backTopButton =
+  document.getElementById("backTopBtn");
+
+window.addEventListener("scroll", function() {
+
+  const scrollable =
+    document.documentElement.scrollHeight -
+    window.innerHeight;
+
+  const progress =
+    scrollable > 0
+    ? (window.scrollY / scrollable) * 100
+    : 0;
+
+  progressBar.style.width = progress + "%";
+
+  if (window.scrollY > 300) {
+    backTopButton.style.display = "block";
+  } else {
+    backTopButton.style.display = "none";
+  }
+
+});
+
+backTopButton.addEventListener("click", function() {
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+
+});
+</script>
+
+<style>
+#abhayFAQ {
+  background: #101010;
+  color: white;
+  padding: 65px 7%;
+  text-align: center;
+}
+
+#abhayFAQ h2 {
+  color: #d4a85a;
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+#abhayFAQ .faq-intro {
+  color: #aaa;
+  margin-bottom: 30px;
+}
+
+.faq-item {
+  max-width: 750px;
+  margin: 12px auto;
+  text-align: left;
+  border: 1px solid #66502e;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.faq-item summary {
+  padding: 18px;
+  cursor: pointer;
+  color: #d4a85a;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.faq-item p {
+  padding: 0 18px 18px;
+  color: #ccc;
+  line-height: 1.7;
+}
+
+.faq-item summary::marker {
+  color: #d4a85a;
+}
+</style>
+
+<section id="abhayFAQ">
+
+  <h2>FREQUENTLY ASKED QUESTIONS</h2>
+
+  <p class="faq-intro">
+    Some common questions about our photography.
+  </p>
+
+  <div class="faq-item">
+    <details>
+      <summary>What type of photography do you offer?</summary>
+      <p>We showcase portrait, nature, event and creative photography.</p>
+    </details>
+  </div>
+
+  <div class="faq-item">
+    <details>
+      <summary>Can I see your photography portfolio?</summary>
+      <p><Y></Y>
